@@ -38,10 +38,3 @@ class database_operation:
         mycursor.execute(sql, val)
         self.mydb.commit()
         return True
-
-
-#db = database_operation("127.0.0.1","root","","test")
-#sql = "INSERT INTO player (name, points) VALUES (%s, %s)"
-#val = ("Alex", "200")
-#db.insert_table_data(sql, val)
-#print(db.get_table_data("player"))
