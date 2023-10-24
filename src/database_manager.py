@@ -1,40 +1,38 @@
-import mysql.connector
+import sqlite3
 
 class database_operation:
-    def __init__(self, hostname: str, username: str, pass_word: str, database_name: str) -> None:
-        self.mydb = mysql.connector.connect(
-        host=hostname,
-        user=username,
-        password=pass_word,
-        database=database_name
-        )
-
-    def create_table(self, tablename):
+    def __init__(self, dbname: str) -> None:
+        self.mydb = sqlite3.connect(dbname)
+        self.cursor = self.mydb.cursor()
+    
+    def check_connection(self):
+        """
+        Function to check connection.
+        """
+        if self.mydb.cursor:
+            return True
+        else:
+            return False
+      
+    def create_table(self, sql):
         """
         Function to create table.
         """
-        mycursor = self.mydb.cursor()
-        sql = "CREATE TABLE " + tablename + " (name VARCHAR(255), points VARCHAR(255))"
-        mycursor.execute(sql)
+        self.cursor.execute(sql)
         return True
-
-    def get_table_data(self, tablename):
-        """
-        Function to get data from table.
-        """
-        mycursor = self.mydb.cursor()
-        sql = "SELECT * FROM "+tablename
-        mycursor.execute(sql)
-        myresult = mycursor.fetchall()
-        return myresult
-
-    def insert_table_data(self, sql, val):
+      
+    def insert_data(self, sql: str):
         """
         Function to insert data.
         """
-        mycursor = self.mydb.cursor()
-        #sql = "INSERT INTO "+tablename+" (name, points) VALUES (%s, %s)"
-        #val = ("Devid", "193")
-        mycursor.execute(sql, val)
-        self.mydb.commit()
+        self.cursor.execute(sql)
         return True
+
+    def get_table_data(self, sql: str):
+        """
+        Function to get data from table.
+        """
+        result = self.cursor.execute(sql)
+        return result
+
+
