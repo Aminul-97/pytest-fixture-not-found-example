@@ -35,6 +35,7 @@ def test_insert_data(initialize_database):
 def test_get_table_data(initialize_database):
     db = initialize_database
     sql = '''SELECT * FROM Player'''
+    print(db.get_table_data(sql))
     assert db.get_table_data(sql) != None
 
 

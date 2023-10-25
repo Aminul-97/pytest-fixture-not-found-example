@@ -26,6 +26,7 @@ class database_operation:
         Function to insert data.
         """
         self.cursor.execute(sql)
+        self.mydb.commit()
         return True
 
     def get_table_data(self, sql: str):
@@ -34,5 +35,6 @@ class database_operation:
         """
         result = self.cursor.execute(sql)
         return result
+
 
 
