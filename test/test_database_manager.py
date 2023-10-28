@@ -1,13 +1,9 @@
 import pytest
 from src.database_manager import database_operation
 
+# Fixture to initialize database. We intentionally made a mistake here with the name of the fixture to demonstrate the error.
 @pytest.fixture
-def initialize_database():
-    db = database_operation("player.db")
-    return db
-
-## This function will generate a "fixture not found" error
-def initialize_database():
+def initialize_db():
     db = database_operation("player.db")
     return db
 
