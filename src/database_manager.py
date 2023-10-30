@@ -14,20 +14,12 @@ class database_operation:
         else:
             return False
       
-    def create_table(self, sql):
+    def execute_sql(self, sql: str):
         """
-        Function to create table.
-        """
-        self.cursor.execute(sql)
-        return True
-      
-    def insert_data(self, sql: str):
-        """
-        Function to insert data.
+        Function to execute SQL query.
         """
         self.cursor.execute(sql)
-        self.mydb.commit()
-        return True
+        return True 
 
     def get_table_data(self, sql: str):
         """
