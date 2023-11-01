@@ -1,8 +1,8 @@
 # PyTest Fixture Not Found Example
 
-<!-- This repo contains the sample code for the article - [How To Test Python Exception Handling Using Pytest Assert (A Simple Guide)](https://pytest-with-eric.com/introduction/pytest-assert-exception/)
+This repo contains the sample code for the article - [5 Simple Techniques To Resolve The Pytest Fixture Not Found Error](https://pytest-with-eric.com/introduction/pytest-fixture-not-found/)
 
-This project explains How to assert Python Exceptions in Pytest. -->
+This project explains how to debug and fix the `Fixture not found` error in Pytest .
 
 # Requirements
 * Python (3.11+)
