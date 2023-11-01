@@ -1,4 +1,4 @@
-# PyTest Fixture Not Found Example
+# Pytest Fixture Not Found Example
 
 This repo contains the sample code for the article - [5 Simple Techniques To Resolve The Pytest Fixture Not Found Error](https://pytest-with-eric.com/introduction/pytest-fixture-not-found/)
 
